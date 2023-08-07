@@ -8,6 +8,7 @@
     "sequelize": "node_modules/.bin/sequelize"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
