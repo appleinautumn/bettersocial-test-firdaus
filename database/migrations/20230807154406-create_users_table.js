@@ -28,13 +28,13 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       name: {
-        allowNull: false,
         type: Sequelize.TEXT,
       },
       profile_picture: {
         type: Sequelize.TEXT,
       },
       password: {
+        allowNull: false,
         type: Sequelize.TEXT,
       },
     });
