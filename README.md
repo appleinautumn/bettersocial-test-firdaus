@@ -18,7 +18,7 @@ lainnya)
 This project is developed with:
 
 - Node 18 LTS
-- Postgres 15
+- PostgreSQL 15
 
 ## Installation
 
@@ -44,4 +44,53 @@ Start the app
 
 ```bash
 npm run dev
+```
+
+## Database
+
+If you have not created the database, please create one before going to the next step.
+
+This microservice depends on `sequelize-cli` package. To install globally
+```
+npm install -g sequelize-cli
+```
+
+### Running Migrations
+
+Run database migration
+```
+sequelize db:migrate
+```
+
+### Running Seeds
+
+No seeds because this API is only for registration.
+
+## Testing
+
+Test the service
+
+```bash
+npm test
+```
+
+Example
+```bash
+$ npm run test
+
+> bettersocial-test@0.0.0 test
+> NODE_ENV=test mocha --timeout 10000 --exit './test/**/*.test.js'
+
+
+
+  API Controller Unit Test
+    Test createUser method
+      ✔ should register a user
+
+  User Repository Unit Test
+    ✔ tests create method
+
+  User Service Unit Test
+    ✔ tests create method (197ms)
+
 ```
