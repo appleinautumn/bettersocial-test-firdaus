@@ -5,40 +5,51 @@ const express = require('express');
 const createError = require('http-errors');
 const logger = require('morgan');
 
+const { createDatabase } = require('./db');
+const {
+  createApiController,
+  createUserRepository,
+  createUserService,
+} = require('./modules');
 const apiRouter = require('./routes/index');
 
-var app = express();
+const app = express();
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+async function main() {
 
-// init database
-const db = await createDatabase(process.env.DB_URL);
+  app.use(logger('dev'));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: false }));
 
-// init dependencies
-const userRepository = createUserRepository(db);
-const userService = createUserService(userRepository);
-const apiController = createApiController(userService);
+  // init database
+  const db = await createDatabase(process.env.DB_URL);
 
-// init routes
-app.use('/', apiRouter(apiController));
+  // init dependencies
+  const userRepository = createUserRepository(db);
+  const userService = createUserService(userRepository);
+  const apiController = createApiController(userService);
 
-app.get('/', (req, res) => {
-  res.send("bettersocial-test");
-});
+  // init routes
+  app.use('/', apiRouter(apiController));
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function (err, req, res, next) {
-  res.json({
-    message: err.message,
-    data: null,
+  app.get('/', (req, res) => {
+    res.send("bettersocial-test");
   });
-});
+
+  // catch 404 and forward to error handler
+  app.use(function (req, res, next) {
+    next(createError(404));
+  });
+
+  // error handler
+  app.use(function (err, req, res, next) {
+    res.json({
+      message: err.message,
+      data: null,
+    });
+  });
+}
+
+main();
 
 module.exports = app;
