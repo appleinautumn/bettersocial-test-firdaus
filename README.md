@@ -12,3 +12,36 @@ adalah unik.
 4. Buatlah dokumentasi dari semua API yang dikerjakan (Postman, Swagger, atau yang
 lainnya)
 5. Buatlah unit test dan integration testnya, menggunakan Postman lebih disukai
+
+## Requirements
+
+This project is developed with:
+
+- Node 18 LTS
+- Postgres 15
+
+## Installation
+
+Clone the project
+
+```bash
+git clone git@github.com:appleinautumn/bettersocial-test-firdaus.git
+```
+
+Go to the project directory
+
+```bash
+cd bettersocial-test-firdaus
+```
+
+This service contains a `.env.example` file that defines environment variables you need to set. Copy and set the variables to a new `.env` file.
+
+```bash
+cp .env.example .env
+```
+
+Start the app
+
+```bash
+npm run dev
+```
