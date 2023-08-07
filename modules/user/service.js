@@ -13,6 +13,7 @@ class UserService {
 
     const params = {
       ...data,
+      id: uuidv4(),
       password: hashedPassword,
     }
     return this.userRepository.create(params);
