@@ -1,0 +1,14 @@
+# BetterSocial Test
+
+Buatlah sebuah sistem backend untuk seorang user melakukan pendaftaran ke aplikasi. Sistem
+backend ini terdiri atas API dan Database.
+Saat melakukan registrasi terdapat ketentuan sebagai berikut (lampiran gambar hanya sebagai
+visualisasi):
+1. User diharuskan memasukkan username, username hanya boleh terdiri dari huruf dan
+angka (alphanumeric), tidak boleh terdapat simbol di dalamnya, dan setiap username
+adalah unik.
+2. User dapat mengunggah gambar sebagai profile picture (optional)
+3. Buatlah validasi dari semua API yang dikerjakan
+4. Buatlah dokumentasi dari semua API yang dikerjakan (Postman, Swagger, atau yang
+lainnya)
+5. Buatlah unit test dan integration testnya, menggunakan Postman lebih disukai
