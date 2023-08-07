@@ -46,6 +46,10 @@ Start the app
 npm run dev
 ```
 
+## API Documentation
+
+https://documenter.getpostman.com/view/3021947/2s9XxzuCmZ
+
 ## Database
 
 If you have not created the database, please create one before going to the next step.
